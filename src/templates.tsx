@@ -5,8 +5,8 @@ import { escapeHtml, h, Raw, render, VNode } from "./tsx.ts";
 import { Post as PostData } from "./main.ts";
 import { FeedEntry as FeedEntryData } from "./blogroll.ts";
 
-const site_url = "https://matklad.github.io";
-const blurb = "matklad's Arts&Crafts";
+const site_url = "https://vincent-dalstra.github.io";
+const blurb = "vincent-dalstra's Arts&Crafts";
 
 export function html_ugly(node: VNode, doctype = "<!DOCTYPE html>"): string {
   return `${doctype}\n${render(node)}`;
@@ -71,7 +71,7 @@ function Base({ children, src, title, path, description, extra_css }: {
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="matklad"
+          title="vincent-dalstra"
           href={`${site_url}/feed.xml`}
         />
         <Fonts />
@@ -81,7 +81,7 @@ function Base({ children, src, title, path, description, extra_css }: {
       <body>
         <header>
           <nav>
-            <a class="title" href="/">matklad</a>
+            <a class="title" href="/">vincent-dalstra</a>
             <a href="/about.html">About</a>
             <a href="/links.html">Links</a>
             <a href="/blogroll.html">Blogroll</a>
@@ -95,7 +95,7 @@ function Base({ children, src, title, path, description, extra_css }: {
         <footer>
           <p>
             <a
-              href={`https://github.com/matklad/matklad.github.io/edit/master${src}`}
+              href={`https://github.com/vincent-dalstra/vincent-dalstra.github.io/edit/master${src}`}
             >
               Fix typo
             </a>
@@ -107,14 +107,14 @@ function Base({ children, src, title, path, description, extra_css }: {
 
             <a href="/">All posts</a>
 
-            <a href="mailto:aleksey.kladov+blog@gmail.com">
+            <a href="mailto:vincent.dalstra+blog@gmail.com">
               <FooterIcon name="email" />
               Get in touch
             </a>
 
-            <a href="https://github.com/matklad">
+            <a href="https://github.com/vincent-dalstra">
               <FooterIcon name="github" />
-              matklad
+              vincent-dalstra
             </a>
           </p>
         </footer>
@@ -135,7 +135,7 @@ export function Page(name: string, content: HtmlString) {
   return (
     <Base
       path={`/${name}`}
-      title="matklad"
+      title="vincent-dalstra"
       description={blurb}
       src={`/content/${name}.dj`}
       extra_css={name === "resume" ? "resume.css" : undefined}
@@ -156,7 +156,7 @@ export function PostList({ posts }: { posts: PostData[] }) {
   ));
 
   return (
-    <Base path="" title="matklad" description={blurb} src="/src/templates.tsx">
+    <Base path="" title="vincent-dalstra" description={blurb} src="/src/templates.tsx">
       <ul class="post-list">
         {list_items}
       </ul>
@@ -196,7 +196,7 @@ export function BlogRoll({ posts }: { posts: FeedEntryData[] }) {
   ));
 
   return (
-    <Base path="" title="matklad" description={blurb} src="/src/templates.tsx">
+    <Base path="" title="vincent-dalstra" description={blurb} src="/src/templates.tsx">
       <ul class="post-list">
         {list_items}
       </ul>
@@ -261,7 +261,7 @@ function Feed({ posts }: { posts: PostData[] }) {
       <link href={site_url} rel="alternate" type="text/html" />
       <updated>{new Date().toISOString()}</updated>
       <id>{`${site_url}/feed.xml`}</id>
-      <title type="html">matklad</title>
+      <title type="html">vincent-dalstra</title>
       <subtitle>{blurb}</subtitle>
       <author>
         <name>Alex Kladov</name>
