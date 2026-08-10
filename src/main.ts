@@ -166,7 +166,12 @@ async function build(params: {
     );
   }
 
-  const pages = ["about", "resume", "links", "style"];
+  const pages = [
+      "about",
+      "resume",
+      "links",
+//      "style",
+  ];
   for (const page of pages) {
     const text = await Deno.readTextFile(`content/${page}.dj`);
     const ast = await djot.parse(text);
@@ -191,14 +196,14 @@ async function build(params: {
   }
 
   const paths = [
-    "favicon.svg",
-    "favicon.png",
-    "resume.pdf",
+//    "favicon.svg",
+//    "favicon.png",
+//    "resume.pdf",
     "css/*",
     "assets/*",
-    "assets/resilient-parsing/*",
-    "assets/2026-02-25-against-query-based-compilers/*",
-    "assets/2026-03-19-consensus-board-game/*",
+//    "assets/resilient-parsing/*",
+//    "assets/2026-02-25-against-query-based-compilers/*",
+//    "assets/2026-03-19-consensus-board-game/*",
   ];
   for (const path of paths) {
     await update_path(path);
