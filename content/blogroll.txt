@@ -3,3 +3,4 @@ https://andrewkelley.me/rss.xml
 https://tigerbeetle.com/blog/atom.xml
 https://yosefk.com/blog/feed
 https://ziglang.org/devlog/index.xml
+https://blog.thea.codes/feed.xml
